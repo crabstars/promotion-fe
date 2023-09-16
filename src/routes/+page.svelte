@@ -2,6 +2,7 @@
 	import { Table } from '@skeletonlabs/skeleton';
 	import { ProgressRadial } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
+	import { PUBLIC_BASE_URL } from '$env/static/public';
 
 	/**
 	 * @type {any[]}
@@ -38,17 +39,14 @@
 		const productName = inputElement?.value ?? '';
 
 		// Define the URL with query parameters
-		const url = new URL('http://localhost:5266/api/promotions');
+		const url = new URL(PUBLIC_BASE_URL + 'api/promotions');
 		url.searchParams.append('productName', productName);
 		url.searchParams.append('page', page.toString());
 		url.searchParams.append('count', count.toString());
 
 		// Create a fetch request with headers
 		const response = await fetch(url.toString(), {
-			method: 'GET',
-			headers: {
-				'x-api-key': 'd13h5r8dsad'
-			}
+			method: 'GET'
 		});
 
 		if (!response.ok) {
