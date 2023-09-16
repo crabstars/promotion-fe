@@ -2,9 +2,16 @@
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Env variables 
+
+
+## Setup
+
+### Env variables 
 Create a .env file in root directory and set your base url
 eg. PUBLIC_BASE_URL="http://localhost:5173/"
+
+### Backend
+https://github.com/crabstars/CallbackServerPromoCode
 
 ## Developing
 
