@@ -42,6 +42,7 @@ your-domain {
    root * /root/promotion-fe/build
    file_server
 
+   # i use localhost:8001 because my api and fe are on the same server
    route /api/* {	
       reverse_proxy localhost:8001
    }
