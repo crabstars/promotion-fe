@@ -37,15 +37,15 @@ I use caddy with following config
 
 ```
 your-domain {
-	log
+   log
 
-	root * /root/promotion-fe/build
-	file_server
+   root * /root/promotion-fe/build
+   file_server
 
-     route /api/* {	
-	    reverse_proxy localhost:8001
-	}
+   route /api/* {	
+      reverse_proxy localhost:8001
+   }
  
-     redir / /promo 302
+   redir / /promo 302
 }
 ```
