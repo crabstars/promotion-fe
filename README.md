@@ -29,3 +29,23 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+
+## Deploy
+
+I use caddy with following config
+
+```
+your-domain {
+	log
+
+	root * /root/promotion-fe/build
+	file_server
+
+     route /api/* {	
+	    reverse_proxy localhost:8001
+	}
+ 
+     redir / /promo 302
+}
+```
